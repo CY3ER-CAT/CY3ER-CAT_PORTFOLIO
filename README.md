@@ -90,6 +90,7 @@ vercel                # link + deploy (framework: Vite, auto-detected)
 vercel --prod         # production
 ```
 Or import the repo at vercel.com — Vite is auto-detected; build `npm run build`, output `dist`.
+`vercel.json` already enables SPA fallback so `/projects/agri-detect` loads on direct visit/refresh.
 
 ### Netlify
 ```bash
