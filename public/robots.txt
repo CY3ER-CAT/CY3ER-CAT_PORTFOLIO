@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cybercat-portfolio.example.com/sitemap.xml

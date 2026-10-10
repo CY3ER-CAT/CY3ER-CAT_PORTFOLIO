@@ -1,0 +1,84 @@
+/*
+  CY3ER-CAT design tokens.
+  Palette direction: "ember precision" — deep ember-black ground with a
+  two-stop flame accent (#ff3d00 → #ff8a1f). Everything rides on warm
+  near-neutral cream-type over a red-black ground, so the flame accent
+  and the 3D cat pop the way an ember does in the dark.
+  Variable names stay as-is for Tailwind compatibility (cyan/violet are
+  the "accent A / accent B" slots).
+*/
+:root {
+  /* dark "ember ink" theme — default */
+  --c-bg: #120400;
+  --c-bg-elevated: #200a03;
+  --c-bg-elevated-2: #33110a;
+  --c-cyan: #ff8a1f; /* primary accent — "flame-lit" (name kept for Tailwind compat) */
+  --c-cyan-soft: rgba(255, 138, 31, 0.13);
+  --c-violet: #ff3d00; /* secondary — "flame", hotter end of the ember (name kept for compat) */
+  --c-violet-soft: rgba(255, 61, 0, 0.14);
+  --c-text: #fff5ec;
+  --c-text-muted: #d8c7b8;
+  --c-border: rgba(255, 200, 150, 0.11);
+  --c-border-strong: rgba(255, 190, 140, 0.22);
+  --c-success: #96d88f;
+  --c-danger: #ffaa99;
+  --c-glass: rgba(42, 11, 2, 0.66);
+  --c-shadow: rgba(0, 0, 0, 0.55);
+  --c-glow-cyan: rgba(255, 138, 31, 0.2);
+  --c-glow-violet: rgba(255, 61, 0, 0.18);
+  --c-navbar: rgba(18, 4, 0, 0.8);
+  --c-grid: rgba(255, 214, 178, 0.045);
+
+  --font-display: 'Archivo', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-accent: 'Instrument Serif', Georgia, serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  /* motion — the single site-wide curve (Scrolltide discipline: one easing, everywhere) */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* reading scrim — soft ember-ink fade behind text columns so type stays crisp over the 3D */
+  --c-side-shade: rgba(18, 4, 0, 0.86);
+
+  --shell-max: 74rem;
+  --section-pad: clamp(5rem, 12vh, 9rem);
+
+  /* type scale */
+  --fs-hero: clamp(2.7rem, 7vw, 5.4rem);
+  --fs-h2: clamp(1.9rem, 4vw, 3.2rem);
+  --fs-h3: 1.3rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  color-scheme: dark;
+}
+
+html[data-theme='light'] {
+  --c-bg: #f7efe6;
+  --c-bg-elevated: #fffaf3;
+  --c-bg-elevated-2: #f2e3d3;
+  --c-cyan: #bf4a08; /* deeper ember for cream surfaces — AA for white button text */
+  --c-cyan-soft: rgba(191, 74, 8, 0.12);
+  --c-violet: #d93a00;
+  --c-violet-soft: rgba(217, 58, 0, 0.12);
+  --c-text: #241208;
+  --c-text-muted: #6b4a33;
+  --c-border: rgba(36, 18, 8, 0.12);
+  --c-border-strong: rgba(36, 18, 8, 0.24);
+  --c-success: #2f7d38;
+  --c-danger: #b3321c;
+  --c-glass: rgba(255, 250, 243, 0.8);
+  --c-shadow: rgba(97, 44, 12, 0.16);
+  --c-glow-cyan: rgba(191, 74, 8, 0.16);
+  --c-glow-violet: rgba(217, 58, 0, 0.14);
+  --c-navbar: rgba(247, 239, 230, 0.82);
+  --c-grid: rgba(36, 18, 8, 0.05);
+  --c-side-shade: rgba(247, 239, 230, 0.88);
+
+  color-scheme: light;
+}

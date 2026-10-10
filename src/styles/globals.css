@@ -1,0 +1,444 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- base ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Lenis drives scrolling when active; it sets this class itself. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  letter-spacing: 0.005em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--c-cyan-soft);
+  color: var(--c-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* subtle scrollbars on desktop */
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--c-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--c-bg-elevated-2);
+    border-radius: 8px;
+    border: 2px solid var(--c-bg);
+  }
+}
+
+/* ---------- shared primitives ---------- */
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: var(--shell-max);
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .section {
+    padding-block: var(--section-pad);
+    position: relative;
+  }
+
+  /* thin luminous hairline used between major sections */
+  .section-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--c-border-strong) 22%, var(--c-border-strong) 78%, transparent);
+  }
+
+  .glass {
+    background: var(--c-glass);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--c-border);
+  }
+
+  .card {
+    background: var(--c-bg-elevated);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    transition: border-color 0.3s var(--ease-out), transform 0.3s var(--ease-out),
+      box-shadow 0.3s var(--ease-out);
+  }
+
+  .card:hover {
+    border-color: rgba(255, 138, 31, 0.55);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 44px var(--c-shadow), 0 18px 60px -18px var(--c-glow-cyan);
+  }
+  html[data-theme='light'] .card:hover {
+    border-color: rgba(191, 74, 8, 0.5);
+    box-shadow: 0 18px 44px var(--c-shadow), 0 18px 60px -18px rgba(191, 74, 8, 0.28);
+  }
+
+  /* primary-label line: mono, uppercase, with an accent tick */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--c-text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 2.1rem;
+    height: 1px;
+    background: var(--c-cyan);
+    opacity: 0.9;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    padding: 0.32rem 0.72rem;
+    border-radius: 999px;
+    border: 1px solid var(--c-border);
+    color: var(--c-text-muted);
+    background: var(--c-bg-elevated-2);
+    white-space: nowrap;
+    transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+  }
+  .chip:hover {
+    color: var(--c-text);
+    border-color: rgba(255, 138, 31, 0.55);
+    background: var(--c-bg-elevated);
+    box-shadow: 0 0 22px -6px var(--c-glow-cyan);
+  }
+  html[data-theme='light'] .chip:hover {
+    border-color: rgba(191, 74, 8, 0.5);
+    box-shadow: 0 0 22px -6px rgba(191, 74, 8, 0.3);
+  }
+
+  .link-quiet {
+    color: var(--c-text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.25s ease, border-color 0.25s ease;
+  }
+  .link-quiet:hover {
+    color: var(--c-text);
+    border-color: var(--c-cyan);
+  }
+}
+
+/* ---------- decorative utilities ---------- */
+
+/* reading scrim — subtle ink fade behind text columns so type stays crisp
+   over the full-intensity 3D (Scrolltide vignette pattern, localized).
+   Applied to the .shell itself: a shell's own background always paints
+   before its children (text) and before the fixed canvas (whose transparent
+   pixels let the scrim show through), so static text is never dimmed. */
+.read-scrim {
+  background-image: linear-gradient(
+    90deg,
+    var(--c-side-shade) 0%,
+    color-mix(in srgb, var(--c-side-shade) 55%, transparent) 42%,
+    transparent 74%
+  ) !important;
+}
+.read-scrim--right {
+  background-image: linear-gradient(
+    270deg,
+    var(--c-side-shade) 0%,
+    color-mix(in srgb, var(--c-side-shade) 55%, transparent) 42%,
+    transparent 74%
+  ) !important;
+}
+.read-scrim--center {
+  background-image: radial-gradient(ellipse 90% 62% at 50% 6%, var(--c-side-shade) 0%, transparent 72%) !important;
+}
+.read-scrim--both {
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--c-side-shade) 0%,
+      color-mix(in srgb, var(--c-side-shade) 55%, transparent) 42%,
+      transparent 74%
+    ),
+    linear-gradient(
+      270deg,
+      var(--c-side-shade) 0%,
+      color-mix(in srgb, var(--c-side-shade) 55%, transparent) 42%,
+      transparent 74%
+    ) !important;
+}
+
+/* fine film grain; extremely cheap, disabled on lite mode */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+html[data-lite='true'] .grain::after,
+html[data-theme='light'] .grain::after {
+  display: none;
+}
+
+/* precise engineering grid — faint, masked toward the edges */
+.gridlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(var(--c-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-grid) 1px, transparent 1px);
+  background-size: clamp(44px, 6vw, 72px) clamp(44px, 6vw, 72px);
+  -webkit-mask-image: radial-gradient(ellipse 92% 78% at 50% 28%, #000 25%, transparent 78%);
+  mask-image: radial-gradient(ellipse 92% 78% at 50% 28%, #000 25%, transparent 78%);
+}
+
+/* soft radial glows placed behind sections */
+.aura {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(84px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* animated conic border for the featured card */
+@property --spin {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+.featured-ring {
+  position: relative;
+}
+.featured-ring::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--spin),
+    transparent 12%,
+    var(--c-cyan) 24%,
+    transparent 38%,
+    transparent 62%,
+    var(--c-violet) 74%,
+    transparent 88%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: spin-border 11s linear infinite;
+  pointer-events: none;
+}
+@keyframes spin-border {
+  to {
+    --spin: 360deg;
+  }
+}
+
+/* ---------- custom cursor glow (fine pointer, motion-safe only) ---------- */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--c-cyan);
+  background: radial-gradient(
+    circle at center,
+    rgba(18, 4, 0, 0.72) 0%,
+    rgba(18, 4, 0, 0.72) 17%,
+    rgba(18, 4, 0, 0.22) 46%,
+    rgba(18, 4, 0, 0) 70%
+  );
+  box-shadow: 0 0 18px var(--c-glow-cyan), inset 0 0 12px rgba(255, 138, 31, 0.35);
+  pointer-events: none;
+  z-index: 80;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease, width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+}
+html[data-theme='light'] .cursor-glow {
+  background: radial-gradient(
+    circle at center,
+    rgba(247, 239, 230, 0.9) 0%,
+    rgba(247, 239, 230, 0.9) 17%,
+    rgba(247, 239, 230, 0.35) 46%,
+    rgba(247, 239, 230, 0) 70%
+  );
+  border-color: var(--c-violet);
+  box-shadow: 0 0 14px var(--c-glow-violet), inset 0 0 12px rgba(191, 74, 8, 0.28);
+}
+.cursor-glow.is-live {
+  opacity: 0.95;
+}
+.cursor-glow.is-press {
+  width: 14px;
+  height: 14px;
+}
+.cursor-glow.is-hover {
+  width: 46px;
+  height: 46px;
+  border-color: var(--c-violet);
+  box-shadow: 0 0 26px var(--c-glow-cyan);
+}
+/* near the cyber-cat: the ring becomes a poke target (click → hiss) */
+.cursor-glow.is-cat {
+  width: 40px;
+  height: 40px;
+  border-color: var(--c-violet);
+  box-shadow: 0 0 30px var(--c-glow-cyan), 0 0 0 5px rgba(255, 61, 0, 0.16);
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .cursor-glow,
+  .grain::after {
+    display: none !important;
+  }
+}
+
+/* lite mode: no decorative animations at all */
+html[data-lite='true'] .featured-ring::before {
+  animation: none;
+  background: linear-gradient(120deg, var(--c-cyan), var(--c-violet));
+  opacity: 0.55;
+}
+
+/* ---------- signature flourishes (ember) ---------- */
+
+/* periodic chromatic glitch on the hero title */
+.glitch {
+  animation: gl 0.25s steps(2) 1 !important;
+}
+@keyframes gl {
+  0% {
+    text-shadow: 3px 0 #ff3d00, -3px 0 #2bd9ff;
+    transform: translateX(2px);
+  }
+  100% {
+    text-shadow: none;
+    transform: none;
+  }
+}
+
+/* ember orbit — spinning skill ring, decorative only (aria-hidden in markup) */
+.orbit {
+  perspective: 1100px;
+  height: min(44vh, 310px);
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  user-select: none;
+}
+.orbit .ring {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  animation: orbit-spin 24s linear infinite;
+}
+.orbit .ring span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0.5em 1.05em;
+  border: 1px solid var(--c-border-strong);
+  border-radius: 999px;
+  background: var(--c-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font: 500 0.82rem var(--font-display);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  color: var(--c-text);
+  backface-visibility: hidden;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(min(30vw, 230px)) translate(-50%, -50%);
+  box-shadow: 0 0 24px -8px var(--c-glow-cyan), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+@keyframes orbit-spin {
+  from {
+    transform: rotateX(-14deg) rotateY(0);
+  }
+  to {
+    transform: rotateX(-14deg) rotateY(360deg);
+  }
+}
+@media (max-width: 560px) {
+  .orbit {
+    height: 250px;
+  }
+  .orbit .ring span {
+    font-size: 0.68rem;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(42vw) translate(-50%, -50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit {
+    display: none;
+  }
+}
+html[data-lite='true'] .orbit {
+  display: none;
+}
