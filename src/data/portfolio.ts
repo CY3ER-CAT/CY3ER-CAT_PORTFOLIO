@@ -10,12 +10,12 @@ import type { NavLink, Project, SkillGroup, TimelineEntry, SocialLink } from '..
 export const profile = {
   name: 'Naveenprasanth M',
   handle: 'CY3ER-CAT',
-  role: 'Software & Web Developer · Cybersecurity',
+  role: 'Software Engineer · Web Developer · Cybersecurity',
   heroHeading: 'Building intelligent experiences beyond the screen.',
   heroSub:
     'I build AI-powered applications, interactive websites and creative digital experiences that turn ideas into useful products.',
   techLine: 'AI · React · TypeScript · 3D Web',
-  about: `I'm Naveenprasanth M, a B.E. Computer Science (Cyber Security) student at Rathinam Technical Campus, Coimbatore, working where software, web and security meet. I build practical AI-powered tools — like an offline crop-health app that runs a neural network in the browser — alongside modern web applications and expressive 3D experiences, with an eye for real constraints and interfaces that carry a personality.`,
+  about: `I'm Naveenprasanth M, a B.E. Computer Science (Cyber Security) student at Rathinam Technical Campus, Coimbatore, working where software, web and security meet. I build practical AI-powered tools — like an offline crop-health app that runs a neural network in the browser — alongside modern web applications and expressive 3D experiences, with an eye for real constraints and interfaces that carry a personality. I'm currently seeking an internship where I can apply both the development and security sides of my work.`,
   email: 'naveenprasanthm55@gmail.com',
   location: 'Dharmapuri, Tamil Nadu',
 };
@@ -28,6 +28,7 @@ export const socials: SocialLink[] = [
 export const navLinks: NavLink[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'AGRI-DETECT', href: '/projects/agri-detect', route: '/projects/agri-detect' },
   { label: 'Experience', href: '#experience' },
@@ -138,9 +139,9 @@ export const projects: Project[] = [
 
 export const skillGroups: SkillGroup[] = [
   {
-    category: 'Frontend',
-    blurb: 'Interfaces shipped to production across business and gift sites.',
-    skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Tailwind CSS', 'Bootstrap 5'],
+    category: 'Web Development',
+    blurb: 'Front-end interfaces shipped to production, with back-end fundamentals.',
+    skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Tailwind CSS', 'Bootstrap 5', 'Back-End Development'],
   },
   {
     category: 'AI Integration',
@@ -185,6 +186,11 @@ export const skillGroups: SkillGroup[] = [
     category: 'Programming',
     blurb: 'Core languages behind the tooling and coursework.',
     skills: ['Python', 'Java', 'C'],
+  },
+  {
+    category: 'Soft Skills',
+    blurb: 'How I work with people and under pressure.',
+    skills: ['Leadership', 'Teamwork', 'Adaptability', 'Time Management', 'Problem Solving'],
   },
 ];
 

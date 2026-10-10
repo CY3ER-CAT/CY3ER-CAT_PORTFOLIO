@@ -7,7 +7,7 @@ import { scrollToSection } from '../../utils/scroll';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { LiteModeToggle } from '../ui/LiteModeToggle';
 
-const SECTION_IDS = ['home', 'about', 'projects', 'experience', 'contact'];
+const SECTION_IDS = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
 
 interface Props {
   theme: 'dark' | 'light';
