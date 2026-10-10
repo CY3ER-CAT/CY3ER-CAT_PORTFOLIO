@@ -1,8 +1,17 @@
 # CY3ER-CAT — 3D Developer Portfolio
 
+[![Live site](https://img.shields.io/badge/live-cy--3--er--cat--portfolio.vercel.app-ff8a1f)](https://cy-3-er-cat-portfolio.vercel.app/)
+[![CI](https://github.com/CY3ER-CAT/CY3ER-CAT_PORTFOLIO/actions/workflows/ci.yml/badge.svg)](https://github.com/CY3ER-CAT/CY3ER-CAT_PORTFOLIO/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-ff8a1f)](LICENSE)
+
 Production portfolio for **Naveenprasanth M** (GitHub: [CY3ER-CAT](https://github.com/CY3ER-CAT)).
-A cyberpunk-inspired experience with a procedural Three.js cyber-cat mascot, GSAP motion design,
-a playable gift-lock demo, and a full AGRI-DETECT case study — built with React + Vite + TypeScript (strict).
+An ember-lit, cinematic experience with a procedural Three.js cyber-cat mascot that watches your cursor and
+hisses when clicked, GSAP motion design, a playable gift-lock demo, and a full AGRI-DETECT case study —
+built with React + Vite + TypeScript (strict).
+
+**Live:** https://cy-3-er-cat-portfolio.vercel.app/
+
+![CY3ER-CAT portfolio hero — an ember-lit 3D cyber-cat](docs/preview.jpg)
 
 ## Tech stack
 
@@ -43,7 +52,7 @@ src/
   styles/       tokens.css (design tokens/themes), globals.css
   types/        portfolio.ts (shared types)
   utils/        scroll.ts, validation.ts
-public/         favicon.svg, og-image.svg, robots.txt, sitemap.xml
+public/         favicon.svg, og-image.png (raster; editable source og-image.svg), robots.txt, sitemap.xml
 ```
 
 ## Customization guide
@@ -55,11 +64,12 @@ Everything content-related is in **`src/data/portfolio.ts`**:
 - `timeline` — real education entries plus the build log. Project entries are anchored to public GitHub dates; add `kind: 'work'` entries only when there is a real role.
 - `profile` / `socials` — name, hero copy, email, links.
 
-### Replace contact details (before deploying)
-1. **Email** — `src/data/portfolio.ts` → `profile.email` ✅ set to `naveenprasanthm55@gmail.com`.
-2. **LinkedIn** — `socials` ✅ set to `https://www.linkedin.com/in/naveenprasanth-m-3613a5386`.
-3. **Domain** — ⚠️ still a placeholder. Search the repo for `cybercat-portfolio.example.com` and replace with your deployed URL in:
-   `index.html` (canonical + Open Graph + JSON-LD), `public/robots.txt`, `public/sitemap.xml`.
+### Contact details & domain
+1. **Email** — `src/data/portfolio.ts` → `profile.email` ✅ `naveenprasanthm55@gmail.com`.
+2. **LinkedIn** — `socials` ✅ `https://www.linkedin.com/in/naveenprasanth-m-3613a5386`.
+3. **Domain** — ✅ `https://cy-3-er-cat-portfolio.vercel.app/` is wired through `index.html`
+   (canonical + Open Graph + Twitter + JSON-LD), `public/robots.txt` and `public/sitemap.xml`.
+   If you rename the Vercel project or attach a custom domain, search-and-replace that base URL.
 
 ### Replace project visuals
 Project cards use bespoke SVG compositions (honest, no fake screenshots) in
@@ -102,7 +112,8 @@ Build command `npm run build`, publish directory `dist`. Add a redirect for SPA 
 `public/_redirects` containing `/*  /index.html  200` (create the file if missing).
 
 ### After deploying
-Update the canonical/OG/sitemap/robots URLs (see "Replace contact details" #3).
+The canonical/OG/sitemap/robots URLs already point at the live Vercel URL — update them if you rename the
+project or attach a custom domain (see "Contact details & domain" #3).
 
 ## Performance & accessibility notes
 

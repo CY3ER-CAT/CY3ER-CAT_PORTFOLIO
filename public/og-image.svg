@@ -1,29 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0A0B10"/>
-      <stop offset="1" stop-color="#10131C"/>
+      <stop offset="0" stop-color="#120400"/>
+      <stop offset="1" stop-color="#200a03"/>
     </linearGradient>
     <radialGradient id="glow" cx="0.78" cy="0.42" r="0.55">
-      <stop offset="0" stop-color="#00E5FF" stop-opacity="0.28"/>
-      <stop offset="1" stop-color="#00E5FF" stop-opacity="0"/>
+      <stop offset="0" stop-color="#ff8a1f" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#ff3d00" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
   <g transform="translate(880,190) scale(5.2)">
-    <g fill="none" stroke="#00E5FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <g fill="none" stroke="#ff8a1f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
       <path d="M14 22 L14 14 L22 17"/>
       <path d="M50 22 L50 14 L42 17"/>
       <path d="M14 22 Q14 46 32 50 Q50 46 50 22"/>
     </g>
-    <g fill="#00E5FF">
+    <g fill="#ff8a1f">
       <path d="M21 30 l5 3 l-5 3 l-2 -3 z"/>
       <path d="M43 30 l-5 3 l5 3 l2 -3 z"/>
     </g>
   </g>
-  <text x="90" y="300" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-size="104" font-weight="700" fill="#E8EAF0">CY3ER-CAT</text>
-  <text x="92" y="372" font-family="'Inter', 'Segoe UI', sans-serif" font-size="34" fill="#A4ACBC">Naveenprasanth M — Creative Developer / AI / 3D Web</text>
-  <rect x="92" y="420" width="88" height="6" rx="3" fill="#00E5FF"/>
-  <rect x="192" y="420" width="44" height="6" rx="3" fill="#B36BFF"/>
+  <text x="90" y="300" font-family="'Archivo', 'Segoe UI', sans-serif" font-size="104" font-weight="700" fill="#fff5ec">CY3ER-CAT</text>
+  <text x="92" y="372" font-family="'Inter', 'Segoe UI', sans-serif" font-size="34" fill="#d8c7b8">Naveenprasanth M — Developer · AI · Web · Security</text>
+  <rect x="92" y="420" width="88" height="6" rx="3" fill="#ff8a1f"/>
+  <rect x="192" y="420" width="44" height="6" rx="3" fill="#ff3d00"/>
 </svg>
