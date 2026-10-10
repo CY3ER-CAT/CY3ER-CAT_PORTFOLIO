@@ -21,7 +21,7 @@ export function Experience() {
               index="04"
               eyebrow="Trajectory"
               title={<>Education and a <span className="text-cyan">build log</span>.</>}
-              lead="Real schooling, then what was built, when it shipped, and where the receipts live."
+              lead="Real schooling and certifications, then what was built, when it shipped, and where the receipts live."
             />
           </div>
 
@@ -62,8 +62,8 @@ export function Experience() {
 
         <Reveal>
           <p className="text-muted text-sm mt-10 max-w-xl border-l-2 border-[var(--c-border-strong)] pl-4">
-            Education entries come from my CV. Project entries are anchored to public repositories and their real
-            GitHub dates; employment is added only when there is a real role to list.
+            Education, certification and achievement entries come from my CV. Project entries are anchored to public
+            repositories and their real GitHub dates; employment is added only when there is a real role to list.
           </p>
         </Reveal>
       </div>

@@ -31,7 +31,7 @@ export function Skills() {
           index="02"
           eyebrow="Toolkit"
           title={<>Skills mapped to <span className="text-cyan">shipped work</span>.</>}
-          lead="Every item below is backed by a public repository — nothing aspirational. Hover a chip to see it glow; no animation is required to read this list."
+          lead="Each area below maps to shipped work or completed training — nothing aspirational. Hover a chip to see it glow; no animation is required to read this list."
         />
 
         {/* ember orbit — the file's turning skill ring */}

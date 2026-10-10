@@ -17,6 +17,7 @@ export const profile = {
   techLine: 'AI · React · TypeScript · 3D Web',
   about: `I'm Naveenprasanth M, a B.E. Computer Science (Cyber Security) student at Rathinam Technical Campus, Coimbatore, working where software, web and security meet. I build practical AI-powered tools — like an offline crop-health app that runs a neural network in the browser — alongside modern web applications and expressive 3D experiences, with an eye for real constraints and interfaces that carry a personality.`,
   email: 'naveenprasanthm55@gmail.com',
+  location: 'Dharmapuri, Tamil Nadu',
 };
 
 export const socials: SocialLink[] = [
@@ -161,6 +162,30 @@ export const skillGroups: SkillGroup[] = [
     blurb: 'From repo to live URL.',
     skills: ['Git', 'GitHub', 'Vite', 'Vercel'],
   },
+  {
+    category: 'Cybersecurity',
+    blurb: 'Trained in ethical hacking, forensics and web/API security (preparing for CEH).',
+    skills: [
+      'Penetration Testing',
+      'Web & API Security',
+      'Vulnerability Research',
+      'Ethical Hacking',
+      'Digital Forensics',
+      'Incident Response',
+      'Burp Suite',
+      'Nmap',
+      'Wireshark',
+      'Metasploit',
+      'SQLmap',
+      'Kali Linux',
+      'Postman',
+    ],
+  },
+  {
+    category: 'Programming',
+    blurb: 'Core languages behind the tooling and coursework.',
+    skills: ['Python', 'Java', 'C'],
+  },
 ];
 
 /*
@@ -186,6 +211,18 @@ export const timeline: TimelineEntry[] = [
     title: 'B.E. CSE (Cyber Security) — Rathinam Technical Campus, Coimbatore',
     detail: 'Cyber Security specialisation. Current CGPA 7.59.',
     kind: 'education',
+  },
+  {
+    date: '2026',
+    title: 'Certified Ethical Hacker (CEH) — course',
+    detail: 'LinkedIn Learning coursework; EC-Council CEH certification exam currently in progress.',
+    kind: 'cert',
+  },
+  {
+    date: '2026',
+    title: 'Cyber Incident Response & Digital Forensics — course',
+    detail: 'LinkedIn Learning coursework in incident response and digital forensics.',
+    kind: 'cert',
   },
   {
     date: 'Jun 2026',
@@ -220,6 +257,30 @@ export const timeline: TimelineEntry[] = [
     title: 'This portfolio',
     detail: 'React Three Fiber cyber-cat scene, GSAP motion system, AGRI-DETECT case study.',
     kind: 'project',
+  },
+  {
+    date: '2026',
+    title: 'Project Demo Day 2K26 — Rathinam Technical Campus',
+    detail: 'Presented project work at the campus demo day.',
+    kind: 'activity',
+  },
+  {
+    date: '2020',
+    title: 'Gymnastics — State Level',
+    detail: 'Competed at state level.',
+    kind: 'activity',
+  },
+  {
+    date: '2018',
+    title: 'Chess — District Level',
+    detail: 'Competed at district level.',
+    kind: 'activity',
+  },
+  {
+    date: '2016',
+    title: 'Spell Bee — State Level',
+    detail: 'Competed at state level.',
+    kind: 'activity',
   },
 ];
 

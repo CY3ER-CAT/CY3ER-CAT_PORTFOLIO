@@ -45,7 +45,7 @@ export interface TimelineEntry {
   title: string;
   detail: string;
   link?: string;
-  kind: 'project' | 'education' | 'work';
+  kind: 'project' | 'education' | 'work' | 'cert' | 'activity';
 }
 
 export interface SocialLink {

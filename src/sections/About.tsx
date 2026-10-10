@@ -78,6 +78,7 @@ export function About() {
               </svg>
               <p className="font-display text-sm tracking-[0.25em] uppercase text-center mt-6">{profile.handle}</p>
               <p className="text-muted text-xs text-center mt-2">Digital identity, engineered.</p>
+              <p className="text-muted text-xs text-center mt-3">{profile.location}</p>
             </aside>
           </Reveal>
         </div>
