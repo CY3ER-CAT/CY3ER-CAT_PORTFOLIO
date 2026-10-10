@@ -52,14 +52,13 @@ public/         favicon.svg, og-image.svg, robots.txt, sitemap.xml
 Everything content-related is in **`src/data/portfolio.ts`**:
 - `projects` — title, problem, summary, tech, `repoUrl`, `liveUrl` (only set when verified), metrics, featured flag.
 - `skillGroups` — category cards with chips.
-- `timeline` — the build log. Add real education/work entries here when ready (`kind: 'education' | 'work'`), or keep the project log.
+- `timeline` — real education entries plus the build log. Project entries are anchored to public GitHub dates; add `kind: 'work'` entries only when there is a real role.
 - `profile` / `socials` — name, hero copy, email, links.
 
-### Replace contact details (REQUIRED before deploying)
-1. **Email** — `src/data/portfolio.ts` → `profile.email` (currently `hello@example.com`).
-   The contact form opens a pre-filled `mailto:` — it needs your real address.
-2. **LinkedIn** — `socials` → replace `https://www.linkedin.com/in/YOUR-HANDLE`.
-3. **Domain** — search the repo for `cybercat-portfolio.example.com` and replace with your deployed URL in:
+### Replace contact details (before deploying)
+1. **Email** — `src/data/portfolio.ts` → `profile.email` ✅ set to `naveenprasanthm55@gmail.com`.
+2. **LinkedIn** — `socials` ✅ set to `https://www.linkedin.com/in/naveenprasanth-m-3613a5386`.
+3. **Domain** — ⚠️ still a placeholder. Search the repo for `cybercat-portfolio.example.com` and replace with your deployed URL in:
    `index.html` (canonical + Open Graph + JSON-LD), `public/robots.txt`, `public/sitemap.xml`.
 
 ### Replace project visuals

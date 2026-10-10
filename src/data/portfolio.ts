@@ -10,20 +10,18 @@ import type { NavLink, Project, SkillGroup, TimelineEntry, SocialLink } from '..
 export const profile = {
   name: 'Naveenprasanth M',
   handle: 'CY3ER-CAT',
-  role: 'Creative Developer / AI / Web',
+  role: 'Software & Web Developer · Cybersecurity',
   heroHeading: 'Building intelligent experiences beyond the screen.',
   heroSub:
     'I build AI-powered applications, interactive websites and creative digital experiences that turn ideas into useful products.',
   techLine: 'AI · React · TypeScript · 3D Web',
-  about: `I'm Naveenprasanth M, a developer interested in building practical AI-powered tools, modern web applications and expressive digital experiences. I enjoy combining engineering, thoughtful interface design and experimentation to turn ideas into working products.`,
-  // REPLACE with your real email before deploying.
-  email: 'hello@example.com',
+  about: `I'm Naveenprasanth M, a B.E. Computer Science (Cyber Security) student at Rathinam Technical Campus, Coimbatore, working where software, web and security meet. I build practical AI-powered tools — like an offline crop-health app that runs a neural network in the browser — alongside modern web applications and expressive 3D experiences, with an eye for real constraints and interfaces that carry a personality.`,
+  email: 'naveenprasanthm55@gmail.com',
 };
 
-// REPLACE the LinkedIn URL with your real profile. GitHub is verified.
 export const socials: SocialLink[] = [
   { label: 'GitHub', href: 'https://github.com/CY3ER-CAT' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/YOUR-HANDLE', placeholder: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/naveenprasanth-m-3613a5386' },
 ];
 
 export const navLinks: NavLink[] = [
@@ -166,11 +164,29 @@ export const skillGroups: SkillGroup[] = [
 ];
 
 /*
-  Build log — every date below comes from the public GitHub history of the
-  repositories (created/first-push dates). REPLACE with real education and
-  work entries when you are ready to publish them; keep `kind` accurate.
+  Timeline — real education (from the CV) followed by a build log whose dates
+  come from the public GitHub history of each repository. Employment entries
+  are added only when there is a real role to show; keep `kind` accurate.
 */
 export const timeline: TimelineEntry[] = [
+  {
+    date: '2022 – 2023',
+    title: 'SSLC — Sri Ram Matriculation Hr. Sec. School',
+    detail: 'Completed secondary school with 85%.',
+    kind: 'education',
+  },
+  {
+    date: '2024 – 2025',
+    title: 'HSC — Sri Ram Matriculation Hr. Sec. School',
+    detail: 'Completed higher secondary with 89%.',
+    kind: 'education',
+  },
+  {
+    date: '2025 – present',
+    title: 'B.E. CSE (Cyber Security) — Rathinam Technical Campus, Coimbatore',
+    detail: 'Cyber Security specialisation. Current CGPA 7.59.',
+    kind: 'education',
+  },
   {
     date: 'Jun 2026',
     title: 'yuvaa-dir-magic — typed shell for a business site',

@@ -4,10 +4,9 @@ import { Reveal } from '../components/ui/Reveal';
 import { timeline } from '../data/portfolio';
 
 /**
- * Build log instead of a fabricated CV: every entry below is anchored to a
- * public repository and its real GitHub dates. Education and employment
- * entries are intentionally omitted until real details are supplied —
- * see the README for how to add them.
+ * Education (from the CV) followed by a build log: every project entry is
+ * anchored to a public repository and its real GitHub dates. Employment
+ * entries are added only when there is a real role to list.
  */
 export function Experience() {
   return (
@@ -21,8 +20,8 @@ export function Experience() {
             <SectionHeading
               index="04"
               eyebrow="Trajectory"
-              title={<>A build log, <span className="text-cyan">dated by GitHub</span>.</>}
-              lead="No invented job titles — just what was built, when it shipped, and where the receipts live."
+              title={<>Education and a <span className="text-cyan">build log</span>.</>}
+              lead="Real schooling, then what was built, when it shipped, and where the receipts live."
             />
           </div>
 
@@ -63,8 +62,8 @@ export function Experience() {
 
         <Reveal>
           <p className="text-muted text-sm mt-10 max-w-xl border-l-2 border-[var(--c-border-strong)] pl-4">
-            Formal education and employment entries will appear here once provided — this section deliberately
-            shows only verifiable history. (<code className="text-xs">src/data/portfolio.ts → timeline</code>)
+            Education entries come from my CV. Project entries are anchored to public repositories and their real
+            GitHub dates; employment is added only when there is a real role to list.
           </p>
         </Reveal>
       </div>

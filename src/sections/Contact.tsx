@@ -171,7 +171,7 @@ export function Contact() {
                       </span>
                       <span>
                         <span className="block font-display font-semibold text-sm">{s.label}</span>
-                        <span className="block text-muted text-sm mt-0.5">
+                        <span className="block text-muted text-sm mt-0.5 break-all">
                           {s.placeholder ? 'Profile link coming soon' : s.label === 'GitHub' ? 'github.com/CY3ER-CAT' : s.href}
                         </span>
                       </span>
