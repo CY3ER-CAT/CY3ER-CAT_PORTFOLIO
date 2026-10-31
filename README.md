@@ -11,6 +11,10 @@ built with React + Vite + TypeScript (strict).
 
 **Live:** https://cy-3-er-cat-portfolio.vercel.app/
 
+## 🖥️ Dashboard preview
+
+![CY3ER-CAT portfolio dashboard](assets/dashboard.png)
+
 ![CY3ER-CAT portfolio hero — an ember-lit 3D cyber-cat](docs/preview.jpg)
 
 ## Tech stack
